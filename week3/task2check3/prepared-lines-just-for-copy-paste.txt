@@ -1,0 +1,36 @@
+# set gcloud for cloudshell
+gcloud config set project gl-devops-and-kubernetes
+
+mkdir rootfs
+docker run busybox
+docker export busybox-container-id | tar xf - -C rootfs
+sudo unshare -i -m -n -p -u -U --mount-proc -R rootfs -f sh
+
+runc spec
+
+# args to config.json
+"sh",
+"-c",
+"while true; do { echo -e 'HTTP/1.1 200 OK\n\n Version: 1.0.0'; } | nc -vlp 8080; done"
+
+# path to ns type network
+"path": "/var/run/netns/runc"
+
+
+# create, up and link bridge and addr
+sudo brctl addbr runc0
+sudo ip link set runc0 up
+
+# command for host
+sudo ip addr add 192.168.0.1/24 dev runc0
+sudo ip link add name veth-host type veth peer name veth-guest
+sudo ip link set veth-host up
+sudo brctl addif runc0 veth-host
+
+# command for container/ns
+sudo ip netns add runc
+sudo ip link set veth-guest netns runc
+sudo ip netns exec runc ip link set veth-guest name eth1
+sudo ip netns exec runc ip addr add 192.168.0.2/24 dev eth1
+sudo ip netns exec runc ip link set eth1 up
+sudo ip netns exec runc ip route add default via 192.168.0.1

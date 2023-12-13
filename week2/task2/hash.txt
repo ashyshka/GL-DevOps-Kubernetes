@@ -1,0 +1,11 @@
+d4aa0ec2a2fcca22b4d7c1c8a6989856377facf6
+
+git hash-object ./challenge.txt -w > hash.txt
+d4aa0ec2a2fcca22b4d7c1c8a6989856377facf6
+
+git cat-file -p d4aa0ec2a2fcca22b4d7c1c8a6989856377facf6
+This is my Git challenge file
+
+git update-index --add challenge.txt
+git ls-files
+challenge.txt
