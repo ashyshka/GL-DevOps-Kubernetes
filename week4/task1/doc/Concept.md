@@ -15,17 +15,19 @@ The following aspects are considered relevant for software development use cases
 
 ## KinD (It means Kubernetes-IN-Docker. )
 
-KinD is Kubernetes SIGs project.
+KinD is Kubernetes SIGs project
 Github stars: ~11.7k
 Contributors: 200+
 First commit: Sep 2018
 Main developer: Kubernetes SIG
+
 
 	Supported OS and Architectures: MacOS and Windows at the AMD64, Linux at the AMD64/ARM64
     Automation Posssibility: Support easy create cluster, can`t use addons 
     Additional Features: Have'nt any monitoring and logging system, but can use kubectl and in-box CLI for managing cluster
 
 ## minikube
+
 Minikube is another Kubernetes SIGs project.
 Github stars: ~26.8k
 Contributors: 650+
@@ -37,6 +39,7 @@ Main developer: Kubernetes SIG
     Additional Features: Have Kuberneted Dashboard from the box, can use kubectl and WEB UI (dashboard)for managing cluster. Most popular local k8s alternative
 
 ## k3s/k3d
+
 Github stars: ~23.4k
 Contributors: 1750+ (?)
 First commit: Jan 2019
