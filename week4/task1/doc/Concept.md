@@ -15,11 +15,7 @@ The following aspects are considered relevant for software development use cases
 
 ## KinD (It means Kubernetes-IN-Docker. )
 
-KinD is Kubernetes SIGs project
-Github stars: ~11.7k
-Contributors: 200+
-First commit: Sep 2018
-Main developer: Kubernetes SIG
+KinD is Kubernetes SIGs project<br>Github stars: ~11.7k<br>Contributors: 200+<br>First commit: Sep 2018<br>Main developer: Kubernetes SIG<br>
 
 
 	Supported OS and Architectures: MacOS and Windows at the AMD64, Linux at the AMD64/ARM64
@@ -28,11 +24,11 @@ Main developer: Kubernetes SIG
 
 ## minikube
 
-Minikube is another Kubernetes SIGs project.
-Github stars: ~26.8k
-Contributors: 650+
-First commit: Apr 2016
-Main developer: Kubernetes SIG
+Minikube is another Kubernetes SIGs project.  
+Github stars: ~26.8k  
+Contributors: 650+  
+First commit: Apr 2016  
+Main developer: Kubernetes SIG  
 
 	Supported OS and Architectures: MacOS, Windows and Linux at the very wide set of acritectures
     Automation Posssibility: Support easy create cluster, can use addons 
@@ -40,10 +36,10 @@ Main developer: Kubernetes SIG
 
 ## k3s/k3d
 
-Github stars: ~23.4k
-Contributors: 1750+ (?)
-First commit: Jan 2019
-Main developer: Rancher
+Github stars: ~23.4k  
+Contributors: 1750+ (?)  
+First commit: Jan 2019  
+Main developer: Rancher  
 
 	Supported OS and Architectures: MacOS, Linux and Windows (need to use WSL2) at the very wide set of acritectures
     Automation Posssibility: Support easy create cluster, can`t use addons, but can using some plugins
