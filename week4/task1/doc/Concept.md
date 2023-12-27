@@ -1,19 +1,20 @@
 # Deployment Tools Proposition for AsciiArtify
 
-#Introduction
+# Introduction
 For local development and  deployment and ready to use in the Kubernetes in the future, we have, i think several k8s (kubernetes alternatives).
 In this document we lill look at the all of them. Also, we will usind Podman instead Docker for build containers.
 The following aspects are considered relevant for software development use cases:
 
-- Ease of installation
-- Ease of use, complexity
+- Easy of installation
+- Easy of use, complexity
 - Feature completeness (especially for development and production parity)
 - Resource consumption
 - Overall usability (the so-called developer experience, DX)
 
-#Characteristics
+# Characteristics
 
-##KinD (It means Kubernetes-IN-Docker. )
+## KinD (It means Kubernetes-IN-Docker. )
+
 KinD is Kubernetes SIGs project.
 Github stars: ~11.7k
 Contributors: 200+
@@ -24,7 +25,7 @@ Main developer: Kubernetes SIG
     Automation Posssibility: Support easy create cluster, can`t use addons 
     Additional Features: Have'nt any monitoring and logging system, but can use kubectl and in-box CLI for managing cluster
 
-##minikube
+## minikube
 Minikube is another Kubernetes SIGs project.
 Github stars: ~26.8k
 Contributors: 650+
@@ -35,7 +36,7 @@ Main developer: Kubernetes SIG
     Automation Posssibility: Support easy create cluster, can use addons 
     Additional Features: Have Kuberneted Dashboard from the box, can use kubectl and WEB UI (dashboard)for managing cluster. Most popular local k8s alternative
 
-##k3s/k3d
+## k3s/k3d
 Github stars: ~23.4k
 Contributors: 1750+ (?)
 First commit: Jan 2019
@@ -45,14 +46,14 @@ Main developer: Rancher
     Automation Posssibility: Support easy create cluster, can`t use addons, but can using some plugins
     Additional Features: Have`nt monitoring sysyem from the box. but we have k3x - graphics interface (for Linux) to k3d, can use kubectl amd WEB UI (k3d)for managing cluster. Rancher develops very fast with many options.
 
-##Podman
+## Podman
 Daemon less tool for managing docker containers
 
 	Supported OS and Architectures: MacOS, Linux and Windows (need to use WSL2 for Buildah utility) at the AMD64/ARM64 with OS depends.
     Automation Posssibility: Can`t create cluster, but can to do it with Podman Desktop and KinD
     Additional Features: Similar to KinD
 
-##Comparison Table
+## Comparison Table
 
 
 | Feature | KinD | Minikube | K3S/K3D |
@@ -70,7 +71,7 @@ Daemon less tool for managing docker containers
 | Usability | Easy | More then easy | Easiest |
 
 
-##Pros/Cons Table
+## Pros/Cons Table
 
 All cases can be used for local development and testing,will loook only todifferences 
 
@@ -79,7 +80,7 @@ All cases can be used for local development and testing,will loook only todiffer
 | Pros | Very Minimal HW Req., Can be used for local development | Most popular local kubernetes | Can working at tha multiple nodes |
 | Cons | Have minimal possibility to scaling, can`t use remote images, need to pull to node with docker or podman | Cant create several clusters | Minimal community, support can be tot so fast |
 
-##Conclusion
+## Conclusion
 
 I tried all cases a i think k3d will be better Especially for develkpment. All cases have advantages and disadvantages, but k3s look more haster, more easy, and have many feachers, which have minikube. I will recommend AsciiArtify to use this product.
 
