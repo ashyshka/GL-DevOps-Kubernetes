@@ -1,0 +1,41 @@
+KinD
+
+kind create cluster
+kubectl cluster-info
+docker pull gcr.io/google-samples/hello-app:2.0
+kubectl create deployment hello-app --image=gcr.io/google-samples/hello-app:2.0
+kubectl expose deployment hello-app --type=LoadBalancer --port=8080
+kubectl get svc/hello-app
+kubectl port-forward svc/hello-app 8080:8080 &
+curl localhost:8080
+kubectl get po
+kubectl describe po {pod ID}
+kind delete cluster
+docker rmi gcr.io/google-samples/hello-app:2.0
+
+Minikube
+
+minikube start
+minikube status
+kubectl cluster-info
+kubectl create deployment hello-app --image=gcr.io/google-samples/hello-app:2.0
+kubectl expose deployment hello-app --type=LoadBalancer --port=8080
+kubectl get svc/hello-app
+kubectl port-forward svc/hello-app 8080:8080 &
+curl localhost:8080
+kubectl get po
+kubectl describe po {pod ID}
+minikube delete
+
+K3S/K3D
+
+k3d cluster create
+kubectl cluster-info
+kubectl create deployment hello-app --image=gcr.io/google-samples/hello-app:2.0
+kubectl expose deployment hello-app --type=LoadBalancer --port=8080
+kubectl get svc/hello-app
+kubectl port-forward svc/hello-app 8080:8080 &
+curl localhost:8080
+kubectl get po
+kubectl describe po {pod ID}
+k3d cluster delete
