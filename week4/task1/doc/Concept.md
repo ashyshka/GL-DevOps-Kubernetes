@@ -85,3 +85,5 @@ I tried all cases a i think k3d will be better Especially for develkpment. All c
 
 All products have minimal differents in use, so i will keep here demo with this one
 All steps to reproduce it you can found in file prepared-lines-just-for-copy-paste.txt
+
+![DEMO](https://https://github.com/ashyshka/GL-DevOps-Kubernetes/tree/main/week4/task1/doc/k3d_demo.gif)
