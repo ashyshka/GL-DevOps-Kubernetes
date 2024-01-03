@@ -1,3 +1,7 @@
+# ATTENTION: I HAD A MY STATUS PAGE LOST AFTER SETUP BY MISTAKE :(
+# THIS IS CORRECT STATUS PAGE https://stats.uptimerobot.com/q2vzZCL9LX
+
+
 #### Task 2.1
 **gcloud login and set CredHelpers in the docker config.json for gcloud artifact registry**
 ```
@@ -33,8 +37,7 @@ LB=$(kubectl get svc demo-v1 -o jsonpath="{..ingress[0].ip}")
 ```
 while true; do curl $LB ; sleep 0.3 ; done
 ```
-#### Set up two Uptime Robot Monitorings to the this IP with Keywords "Version: 1.0.0" and "Version: 2.0.0" and Public Status Page with them
-
+#### Set up Uptime Robot Monitorings to the this IP with Keywords "Version: 1.0.0" and add to Public Status Page
 #### Task 2.2
 **build and push v2.0.0, create deploymment**
 ```
@@ -61,11 +64,15 @@ kubectl edit svc demo-v1 # change selector -> run: demo
 kubectl scale deployment demo-v1 --replicas 3
 kubectl scale deployment demo-v2 --replicas 9
 ```
-#### wait a bit - just check reaction
+#### wait a bit - just check reaction and do labels scaled pods
 kubectl label po --all run=demo
 **left only v2.0.0 demo app**
 kubectl scale deployment demo-v1 --replicas 0
 kubectl scale deployment demo-v2 --replicas 1
+#### Set up Uptime Robot Monitorings to the this IP with Keywords "Version: 2.0.0" and add to Public Status Page
 #### wait a bit - just check reaction and wait to collect statistics for Uptime Robot
-**remove cluster**
+**remove cluster**  
+```
 gcloud container clusters delete demo --zone europe-central2-a
+```
+
