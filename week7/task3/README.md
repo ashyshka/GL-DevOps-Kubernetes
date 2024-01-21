@@ -37,17 +37,23 @@ kind: Namespace
 metadata:
   name: demo
 ```
-- flux create source git kbot \
+- do this
+```
+  flux create source git kbot \
     --url=https://github.com/ashyshka/kbot \
     --branch=develop \
     --namespace=demo \
     --export > ./modules/flux-gitops-demo/manifests/kbot-gr.yaml
-- flux create helmrelease kbot \
+```
+- do this
+  ```
+  flux create helmrelease kbot \
     --namespace=demo \
     --source=GitRepository/kbot \
     --chart="./helm" \
     --interval=1m \
     --export > ./modules/flux-gitops-demo/manifests/kbot-hr.yaml
+```
 - change in last file `apiVersion: helm.toolkit.fluxcd.io/v2beta2 -> apiVersion: helm.toolkit.fluxcd.io/v2beta1`
 
 
