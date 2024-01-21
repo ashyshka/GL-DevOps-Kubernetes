@@ -50,7 +50,7 @@ Flux will create repo, where it will store all manifests for using
 
 We will do that
 
-create subdirectory `clusters/demo`
+- create subdirectory `clusters/demo`
 - add file `./ns.yaml`
 - add file `./kbot-gr.yaml`
 - add file `./kbot-hr.yaml`
