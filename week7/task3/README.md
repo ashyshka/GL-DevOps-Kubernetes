@@ -73,6 +73,9 @@ We can check this and can look something like this**
 
 ```
 > terraform state list
+module.flux-gitops-demo.github_repository_file.kbot_gr
+module.flux-gitops-demo.github_repository_file.kbot_hr
+module.flux-gitops-demo.github_repository_file.ns
 module.flux_bootstrap.flux_bootstrap_git.this
 module.github_repository.github_repository.this
 module.github_repository.github_repository_deploy_key.this
