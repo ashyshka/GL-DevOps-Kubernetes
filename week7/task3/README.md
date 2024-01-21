@@ -47,21 +47,21 @@ Flux will create repo, where it will store all manifests for using
 - https://github.com/ashyshka/flux-gitops
 
 **For this time, we can using github WEB UI to make some changes**
+
 We will do that
-```
-create subdirectory clusters/demo
-add file `./ns.yaml` there`
-add file `./kbot-gr.yaml` there`
-add file `./kbot-hr.yaml` there`
-```
+create subdirectory `clusters/demo`
+- add file `./ns.yaml`
+- add file `./kbot-gr.yaml`
+- add file `./kbot-hr.yaml`
 
 This is files, which have definitions to creating some kinds to use with Flux, they are can be foun here 
 - https://github.com/ashyshka/GL-DevOps-Kubernetes/tree/main/week7/task3/flux-gitops/demo
 
 Flux will follow to the changes at the repository
 - https://github.com/ashyshka/kbot
-for changer in file
+for changes in file
 -  https://raw.githubusercontent.com/ashyshka/kbot/develop/helm/Chart.yaml
+
 for field `version:`
 
 All changes in the file `Chart.yaml` makes with GitHub Actions
