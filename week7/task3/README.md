@@ -24,7 +24,7 @@ and for now, we will use local kind k8s cluster instead GKE**
 **Now, we can install local flux cli, just fo comrortable and looking logs**
 `> curl -s https://fluxcd.io/install.sh | bash`
 
-**For this time, we need to preparing some files to make flusk could interact with our cluster when we will make some changes in our repo**
+**For this time, we need to preparing some files to make flux could interact with our cluster when we will make some changes in our repo**
 
 We will do that
 
@@ -46,7 +46,7 @@ metadata:
     --export > ./modules/flux-gitops-demo/manifests/kbot-gr.yaml
 ```
 - do this
-  ```
+```
   flux create helmrelease kbot \
     --namespace=demo \
     --source=GitRepository/kbot \
@@ -67,8 +67,10 @@ and if all ok
 > terraform plan
 > terraform apply
 ```
+
 **Terraform will creating kind cluster and all resourcer, which needed for us. 
 We can check this and can look something like this**
+
 ```
 > terraform state list
 module.flux_bootstrap.flux_bootstrap_git.this
