@@ -56,12 +56,10 @@ We will do that
 - add file `./kbot-hr.yaml`
 
 This is files, which have definitions to creating some kinds to use with Flux, they are can be foun here 
-- https://github.com/ashyshka/GL-DevOps-Kubernetes/tree/main/week7/task3/flux-gitops/demo
+- https://github.com/ashyshka/GL-DevOps-Kubernetes/tree/main/week7/task3/flux-gitops-demo
 
-Flux will follow to the changes at the repository
-- https://github.com/ashyshka/kbot
-for changes in file
--  https://raw.githubusercontent.com/ashyshka/kbot/develop/helm/Chart.yaml
+- Flux will follow to the changes at the repository https://github.com/ashyshka/kbot
+- for changes in file https://raw.githubusercontent.com/ashyshka/kbot/develop/helm/Chart.yaml
 
 for field `version:`
 
