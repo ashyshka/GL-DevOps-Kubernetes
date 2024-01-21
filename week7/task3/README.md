@@ -49,6 +49,7 @@ Flux will create repo, where it will store all manifests for using
 **For this time, we can using github WEB UI to make some changes**
 
 We will do that
+
 create subdirectory `clusters/demo`
 - add file `./ns.yaml`
 - add file `./kbot-gr.yaml`
@@ -69,5 +70,5 @@ All changes in the file `Chart.yaml` makes with GitHub Actions
 
 And after it, Flux will deploy new version into our cluster
 
-**This is just example repo, working repo can be seeng here (just stil work at the next tasks here, so - than repo can be changed)**
+**This is just example repo, working repo can be seeng here (just stil work at the next tasks here, so - that repo can be changed)**
 - https://github.com/ashyshka/tf_gke
