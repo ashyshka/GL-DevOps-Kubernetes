@@ -41,3 +41,11 @@ module "flux_bootstrap" {
 #  config_path       = module.kind_cluster.kubeconfig
   github_token      = var.GITHUB_TOKEN
 }
+
+module "flux-gitops-demo" {
+  source                   = "./modules/flux-gitops-demo/"
+  github_owner             = var.GITHUB_OWNER
+  github_token             = var.GITHUB_TOKEN
+  repository_name          = var.FLUX_GITHUB_REPO
+  target_path              = var.FLUX_GITHUB_TARGET_PATH
+}

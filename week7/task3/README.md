@@ -19,6 +19,38 @@ and for now, we will use local kind k8s cluster instead GKE**
 ./main.tf
 ./variables.tf
 ```
+**NOTE:** we will use our own module, so we need to add it to `main.tf` file too (look it in the folder `./modules/flux-gitops-demo`)
+
+**Now, we can install local flux cli, just fo comrortable and looking logs**
+`> curl -s https://fluxcd.io/install.sh | bash`
+
+**For this time, we need to preparing some files to make flusk could interact with our cluster when we will make some changes in our repo**
+
+We will do that
+
+- just create directory `./modules/flux-gitops-demo/manifests` if it not exists yet
+- create/modify file `./modules/flux-gitops-demo/manifests/ns.yaml` with this content
+```
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: demo
+```
+- flux create source git kbot \
+    --url=https://github.com/ashyshka/kbot \
+    --branch=develop \
+    --namespace=demo \
+    --export > ./modules/flux-gitops-demo/manifests/kbot-gr.yaml
+- flux create helmrelease kbot \
+    --namespace=demo \
+    --source=GitRepository/kbot \
+    --chart="./helm" \
+    --interval=1m \
+    --export > ./modules/flux-gitops-demo/manifests/kbot-hr.yaml
+- change in last file `apiVersion: helm.toolkit.fluxcd.io/v2beta2 -> apiVersion: helm.toolkit.fluxcd.io/v2beta1`
+
+
 **Now, we can start working with it, it`s easy, steb by step**
 ```
 > terraform init
@@ -32,28 +64,17 @@ and if all ok
 **Terraform will creating kind cluster and all resourcer, which needed for us. 
 We can check this and can look something like this**
 ```
-> terraformstate list
+> terraform state list
 module.flux_bootstrap.flux_bootstrap_git.this
 module.github_repository.github_repository.this
 module.github_repository.github_repository_deploy_key.this
 module.kind_cluster.kind_cluster.this
 module.tls_private_key.tls_private_key.this
 ```
-**Now, we can install local flux cli, just fo comrortable and looking logs**
-`> curl -s https://fluxcd.io/install.sh | bash`
 
 **So, now we have kind cluster with installed flux**
 Flux will create repo, where it will store all manifests for using
 - https://github.com/ashyshka/flux-gitops
-
-**For this time, we can using github WEB UI to make some changes**
-
-We will do that
-
-- create subdirectory `clusters/demo`
-- add file `./ns.yaml`
-- add file `./kbot-gr.yaml`
-- add file `./kbot-hr.yaml`
 
 This is files, which have definitions to creating some kinds to use with Flux, they are can be foun here 
 - https://github.com/ashyshka/GL-DevOps-Kubernetes/tree/main/week7/task3/flux-gitops-demo
