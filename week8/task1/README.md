@@ -1,8 +1,8 @@
 # This is HOWTO to using script for install and use pre-commit with gitleaks 
 
-#### 01 Download script for local usage `curl -sL https://raw.githubusercontent.com/ashyshka/GL-DevOps-Kubernetes/main/week8/task1/precommit.sh > precommit.sh`
+#### 01 How to download script for local usage `curl -sL https://raw.githubusercontent.com/ashyshka/GL-DevOps-Kubernetes/main/week8/task1/precommit.sh > precommit.sh`
 
-#### 02 Using script with commend like a `curl pipe sh` but we will using `bash`
+#### 02 How to using script with commend like a `curl pipe sh` but we will using `bash`
 **This is can use some parameters (parameters can be combined):**
 - install - will install pre-commit and gitleaks.
 - setup-globally - will setup it for all repositories, which will be cloned in the future.
